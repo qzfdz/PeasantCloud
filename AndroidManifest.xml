@@ -38,9 +38,8 @@
         android:protectionLevel="signature"
         android:theme="@android:style/Theme.Light.NoTitleBar" >
         <activity
-            android:name="cn.jinke.peasantcloud.activity.MainActivity"
+            android:name="cn.jinke.peasantcloud.activity.SplashIndexActivity"
             android:label="@string/app_name"
-            android:theme="@android:style/Theme.Light.NoTitleBar"
             android:windowSoftInputMode="adjustPan" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -216,8 +215,12 @@
 
         <activity
             android:name="cn.jinke.peasantcloud.activity.PushDealActivity"
-             android:theme="@android:style/Theme.Holo.Light.NoActionBar"
-            android:label="@string/title_activity_push_deal" >
+            android:label="@string/title_activity_push_deal"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
+        </activity>
+        <activity
+            android:name="cn.jinke.peasantcloud.activity.MainActivity"
+            android:theme="@style/Theme.PageIndicatorDefaults">
         </activity>
     </application>
 

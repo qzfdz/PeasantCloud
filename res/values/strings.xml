@@ -17,5 +17,6 @@
     <string name="add_contacts">通讯录</string>
     <string name="title_activity_live">LiveActivity</string>
     <string name="title_activity_push_deal">PushDealActivity</string>
+    <string name="title_activity_splash_index">SplashIndexActivity</string>
 
 </resources>
