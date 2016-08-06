@@ -6,6 +6,9 @@ import io.rong.imkit.widget.provider.InputProvider;
 import io.rong.imlib.RongIMClient;
 import io.rong.imlib.model.Conversation;
 import io.rong.imlib.model.UserInfo;
+
+import com.baidu.mapapi.SDKInitializer;
+
 import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
