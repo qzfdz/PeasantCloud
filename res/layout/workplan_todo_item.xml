@@ -20,7 +20,7 @@
           android:layout_height="wrap_content"
           android:layout_marginLeft="15dp"
           android:layout_marginTop="10dp"
-          android:text="养殖场培训"
+          android:text="给老王家虾池检测"
           android:textColor="#696969"
           android:textSize="20sp"/>
       
@@ -44,7 +44,7 @@
           android:layout_toRightOf="@id/location_icon"
           android:layout_marginLeft="10dp"
           android:layout_marginBottom="10dp"
-          android:text="南京南站"
+          android:text="南京市江宁区弘景大道99号"
           android:textColor="#A9A9A9"
           android:textSize="16sp"/>
       <TextView 
@@ -57,9 +57,9 @@
           android:gravity="center"
           android:padding="3dp"
           android:text="去完成"
-          android:textColor="#A9A9A9"
+          android:textColor="#4a90e2"
           android:background="@drawable/work_btn_bg"
-          android:textSize="12sp"/>
+          android:textSize="14sp"/>
   	</RelativeLayout>
 	
 </LinearLayout>

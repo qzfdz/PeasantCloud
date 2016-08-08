@@ -16,15 +16,17 @@ import cn.jinke.peasantcloud.R;
 public class WorkplanDoneLvAdapter extends BaseAdapter{
 
 	private Context context;
+	private int num;
 	
-	public WorkplanDoneLvAdapter(Context context){
+	public WorkplanDoneLvAdapter(Context context,int num){
 		this.context = context;
+		this.num = num;
 	}
 	
 	@Override
 	public int getCount() {
 		// TODO Auto-generated method stub
-		return 2;
+		return num;
 	}
 
 	@Override
