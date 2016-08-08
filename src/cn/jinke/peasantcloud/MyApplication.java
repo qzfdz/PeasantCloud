@@ -8,14 +8,10 @@ import io.rong.imlib.RongIMClient;
 import io.rong.imlib.model.Conversation;
 import io.rong.imlib.model.Group;
 import io.rong.imlib.model.UserInfo;
-<<<<<<< HEAD
 
 import com.baidu.mapapi.SDKInitializer;
-
-=======
 import io.rong.push.RongPushClient;
 import io.rong.push.common.RongException;
->>>>>>> a9529ffb0c7e5c1151af62dfa4df1ede1365ee08
 import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
