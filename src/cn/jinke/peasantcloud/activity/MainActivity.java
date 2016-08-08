@@ -46,9 +46,10 @@ public class MainActivity extends SlidingFragmentActivity {
 		// 设置左侧边栏布局
 		setBehindContentView(R.layout.home_menu);
 		SlidingMenu slidingMenu = getSlidingMenu();
-		slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_NONE);
-		slidingMenu.setMode(SlidingMenu.LEFT);
-		slidingMenu.setBehindOffset(300);
+		slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+		
+		//slidingMenu.setMode(SlidingMenu.LEFT);
+		slidingMenu.setBehindOffset(300);// 设置预留宽度
 
 		initFragment();
 	}

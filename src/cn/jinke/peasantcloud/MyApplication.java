@@ -8,6 +8,8 @@ import io.rong.imlib.RongIMClient;
 import io.rong.imlib.model.Conversation;
 import io.rong.imlib.model.Group;
 import io.rong.imlib.model.UserInfo;
+
+import com.baidu.mapapi.SDKInitializer;
 import io.rong.push.RongPushClient;
 import io.rong.push.common.RongException;
 import android.app.ActivityManager;

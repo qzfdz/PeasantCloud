@@ -25,13 +25,22 @@
     <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
     <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <!-- 百度地图 -->
+   
+    <!-- <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" /> -->
 
     <uses-sdk
         android:minSdkVersion="16"
         android:targetSdkVersion="18" />
 
     <application
-        android:name="cn.jinke.peasantcloud.MyApplication"
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@drawable/logo"
         android:label="@string/app_name"
@@ -49,17 +58,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="cn.jinke.peasantcloud.activity.AddFarmerFriendActivity"
+            android:name=".activity.AddFarmerFriendActivity"
             android:label="@string/title_activity_add_farmer_friend"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
         <activity
-            android:name="cn.jinke.peasantcloud.activity.FarmerFriendCircleActivity"
+            android:name=".activity.FarmerFriendCircleActivity"
             android:label="@string/title_activity_farmer_friend_circle"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
         <activity
-            android:name="cn.jinke.peasantcloud.activity.ConversationActivity"
+            android:name=".activity.ConversationActivity"
             android:label="@string/title_activity_conversation"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
             <intent-filter>
@@ -74,17 +83,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="cn.jinke.peasantcloud.activity.FriendInfoActivity"
+            android:name=".activity.FriendInfoActivity"
             android:label="@string/title_activity_friend_info"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
-            android:name="cn.jinke.peasantcloud.activity.GroupInfoActivity"
+            android:name=".activity.GroupInfoActivity"
             android:label="@string/title_activity_group_info"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
-            android:name="cn.jinke.peasantcloud.activity.HomeSearchActivity"
+            android:name=".activity.HomeSearchActivity"
             android:label="@string/title_activity_home_search"
             android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="adjustUnspecified|stateHidden" >
@@ -102,14 +111,14 @@
             android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
-            android:name="cn.jinke.peasantcloud.activity.PictureSelectorActivity"
+            android:name=".activity.PictureSelectorActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
-            android:name="cn.jinke.peasantcloud.activity.PicturePreviewActivity"
+            android:name=".activity.PicturePreviewActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.jinke.peasantcloud.tools.RongWebviewActivity"
+            android:name=".tools.RongWebviewActivity"
             android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="io.rong.imkit.intent.action.webview" />
@@ -118,11 +127,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="cn.jinke.peasantcloud.widget.provider.TakingPicturesActivity"
+            android:name=".widget.provider.TakingPicturesActivity"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait" />
         <activity
-            android:name="cn.jinke.peasantcloud.activity.PicturePagerActivity"
+            android:name=".activity.PicturePagerActivity"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
 
         <!-- 必选： SDK 核心功能 -->
@@ -169,6 +178,9 @@
         <meta-data
             android:name="RONG_CLOUD_APP_KEY"
             android:value="e5t4ouvpttb0a" />
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="xdNwPGCFktbxEaOrTa0Qk4YXKjI35OXz" />
 
         <service
             android:name="io.rong.imlib.ipc.RongService"
@@ -187,7 +199,7 @@
         <!-- end -->
 
         <activity
-            android:name="cn.jinke.peasantcloud.activity.VideoContentActivity"
+            android:name=".activity.VideoContentActivity"
             android:label="@string/title_activity_video_content"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
@@ -202,27 +214,39 @@
             android:launchMode="singleTop"
             android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="stateAlwaysHidden" />
-
-        <receiver
-            android:name="cn.jinke.peasantcloud.receiver.MessageReceiver"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="io.rong.push.intent.MESSAGE_ARRIVED" />
-                <action android:name="io.rong.push.intent.MI_MESSAGE_ARRIVED" />
-                <action android:name="io.rong.push.intent.MESSAGE_CLICKED" />
-                <action android:name="io.rong.push.intent.MI_MESSAGE_CLICKED" />
-            </intent-filter>
-        </receiver>
-
         <activity
-            android:name="cn.jinke.peasantcloud.activity.PushDealActivity"
-            android:label="@string/title_activity_push_deal"
-            android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
+            android:name=".activity.WorkPlanActivity"
+            android:label="@string/title_activity_work_plan"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         <activity
+
             android:name="cn.jinke.peasantcloud.activity.SplashIndexActivity"
             android:theme="@style/Theme.PageIndicatorDefaults">
         </activity>
+
+            android:name="cn.jinke.peasantcloud.activity.MapRouteActivity"
+            android:label="@string/title_activity_map_route_activity"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+            <receiver
+                android:name="cn.jinke.peasantcloud.receiver.MessageReceiver"
+                android:exported="true" >
+                <intent-filter>
+                    <action android:name="io.rong.push.intent.MESSAGE_ARRIVED" />
+                    <action android:name="io.rong.push.intent.MI_MESSAGE_ARRIVED" />
+                    <action android:name="io.rong.push.intent.MESSAGE_CLICKED" />
+                    <action android:name="io.rong.push.intent.MI_MESSAGE_CLICKED" />
+                </intent-filter>
+            </receiver>
+
+            <activity
+                android:name="cn.jinke.peasantcloud.activity.PushDealActivity"
+                android:label="@string/title_activity_push_deal"
+                android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
+            </activity>
+           
+        
+
     </application>
 
 </manifest>
