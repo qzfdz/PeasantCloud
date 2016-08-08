@@ -6,11 +6,14 @@ import java.util.Set;
 import io.rong.imkit.RongIM;
 import io.rong.imlib.model.Conversation;
 import io.rong.imlib.model.Conversation.ConversationType;
+import io.rong.imlib.model.Message;
+import io.rong.imlib.model.UserInfo;
 import cn.jinke.peasantcloud.R;
 import cn.jinke.peasantcloud.R.layout;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
@@ -20,7 +23,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-public class ConversationActivity extends FragmentActivity implements OnClickListener{
+public class ConversationActivity extends FragmentActivity implements OnClickListener, RongIM.LocationProvider,RongIM.ConversationBehaviorListener{
 
 	private ImageView UserOrGroupInfo;
 	private ConversationType mConversationType ;
@@ -43,12 +46,11 @@ public class ConversationActivity extends FragmentActivity implements OnClickLis
 //			System.out.println(type.getName()+"??????????????");
 //		}
 		
-		System.out.println(intent.getData().getQueryParameter("title")+"-----------");
+		
 		chat_title.setText(intent.getData().getQueryParameter("title"));
 		mConversationType =Conversation.ConversationType.valueOf(intent.getData()
                 .getLastPathSegment().toUpperCase(Locale.getDefault()));
-		//private  group
-		System.out.println(mConversationType.getName()+"==========================");
+		
 	}
 
 	private void initView() {
@@ -58,6 +60,8 @@ public class ConversationActivity extends FragmentActivity implements OnClickLis
 		back_btn_conversation=(RelativeLayout)findViewById(R.id.back_btn_conversation);
 		back_btn_conversation.setOnClickListener(this);
 		UserOrGroupInfo.setOnClickListener(this);
+		RongIM.setLocationProvider(this);
+		RongIM.setConversationBehaviorListener(this);
 		
 	}
 
@@ -78,6 +82,44 @@ public class ConversationActivity extends FragmentActivity implements OnClickLis
 			finish();
 		}
 		
+		
+	}
+
+	@Override
+	public boolean onMessageClick(Context arg0, View arg1, Message arg2) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean onMessageLinkClick(Context arg0, String arg1) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean onMessageLongClick(Context arg0, View arg1, Message arg2) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean onUserPortraitClick(Context arg0, ConversationType arg1,
+			UserInfo arg2) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean onUserPortraitLongClick(Context arg0, ConversationType arg1,
+			UserInfo arg2) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void onStartLocation(Context arg0, LocationCallback arg1) {
+		// TODO Auto-generated method stub
 		
 	}
 
