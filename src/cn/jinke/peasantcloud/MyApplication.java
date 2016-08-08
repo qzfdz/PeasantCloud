@@ -2,13 +2,20 @@ package cn.jinke.peasantcloud;
 
 import io.rong.imkit.RongContext;
 import io.rong.imkit.RongIM;
+import io.rong.imkit.RongIM.GroupInfoProvider;
 import io.rong.imkit.widget.provider.InputProvider;
 import io.rong.imlib.RongIMClient;
 import io.rong.imlib.model.Conversation;
+import io.rong.imlib.model.Group;
 import io.rong.imlib.model.UserInfo;
+<<<<<<< HEAD
 
 import com.baidu.mapapi.SDKInitializer;
 
+=======
+import io.rong.push.RongPushClient;
+import io.rong.push.common.RongException;
+>>>>>>> a9529ffb0c7e5c1151af62dfa4df1ede1365ee08
 import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
@@ -28,7 +35,7 @@ public class MyApplication extends Application{
              */
             RongIM.init(this);
             
-            String Token="M7nJDk9/Ksp72dcoqeFr0M+jNUQ2Y6oq7L3J+tNH8hIlZetPSwZj6gd+yK9yLncePCxdKv8c2iG/mwy7MGOmRg==";
+            String Token="ggDB8l1zBieXyQBfBnj7wup9/R0sAgu+L/rRSQlF5oyjQenNdU8RuUyfSGBvC24vt/qytZC+SjBZJx5/ErVvsw==";
 //          String Token="qW3nbCCBOLm9UYKiEZieV0AyjF3YK/g/g0Tuv9xBL7v64qEj9tXpMs+RHrKQK4kWZUMy+BDGgFLdwObcF5b7dA==";
           RongIM.connect(Token, new RongIMClient.ConnectCallback(){
               @Override
@@ -48,10 +55,45 @@ public class MyApplication extends Application{
 
               }
           });
-          RongIM.getInstance().setCurrentUserInfo(new UserInfo("123", "专家", Uri.parse("https://www.baidu.com/img/bd_logo1.png")));
-          RongIM.getInstance().refreshUserInfoCache(new UserInfo("123", "专家", Uri.parse("https://www.baidu.com/img/bd_logo1.png")));
-          //RongIM.getInstance().setMessageAttachedUserInfo(true);
+//          if(RongIM.getInstance()!=null){
+//        	  RongIM.getInstance().setCurrentUserInfo(new UserInfo("123", "专家", Uri.parse("https://www.baidu.com/img/bd_logo1.png")));
+////            RongIM.getInstance().refreshUserInfoCache(new UserInfo("123", "专家", Uri.parse("https://www.baidu.com/img/bd_logo1.png")));
+//            RongIM.getInstance().setMessageAttachedUserInfo(true);
+//          }
+          RongIM.setGroupInfoProvider(new GroupInfoProvider() {
+			
+			@Override
+			public Group getGroupInfo(String id) {
+				// TODO Auto-generated method stub
+				return new Group(id, "花生病虫害交流群", Uri.parse("http://i0.peopleurl.cn/nmsgimage/20150909/b_4304371_multi_1441763363839.jpg"));
+			}
+		},true);
+          RongIM.setUserInfoProvider(new RongIM.UserInfoProvider() {
+
+        	    @Override
+        	    public UserInfo getUserInfo(String userId) {
+
+        	        return findUserById(userId);//根据 userId 去你的用户系统里查询对应的用户信息返回给融云 SDK。
+        	    }
+
+				private UserInfo findUserById(String userId) {
+					// TODO Auto-generated method stub
+					if(userId.equals("123")){
+						return new UserInfo(userId, "专家", Uri.parse("https://www.baidu.com/img/bd_logo1.png"));
+					}else{
+						return new UserInfo(userId, "农民老李", Uri.parse("http://b.hiphotos.baidu.com/image/pic/item/7a899e510fb30f244bb50504ca95d143ad4b038d.jpg"));
+					}
+					
+				}
+
+        	}, true);
          
+          try {
+			RongPushClient.checkManifest(getApplicationContext());
+		} catch (RongException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         }
 		
 	}
