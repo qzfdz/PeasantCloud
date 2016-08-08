@@ -3,6 +3,7 @@ package cn.jinke.peasantcloud.fragment;
 import com.viewpagerindicator.TabPageIndicator;
 import cn.jinke.peasantcloud.R;
 import cn.jinke.peasantcloud.adapter.HomeListViewAdapter;
+import cn.jinke.peasantcloud.view.DispatchViewPager;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
@@ -18,7 +19,7 @@ import android.widget.ListView;
 public class HomeVpLeftFragment extends BaseFragment {
 
 	private View view;
-	private ViewPager home_left_vp;
+	private DispatchViewPager home_left_vp;
 	private TabPageIndicator indicator;
 	private static final String[] category = new String[] { "农业科技", "应时农业",
 			"农事百科", "质量监督", "农业大全", "农事百科" };
@@ -31,7 +32,7 @@ public class HomeVpLeftFragment extends BaseFragment {
 
 	@Override
 	public void initData() {
-		home_left_vp = (ViewPager) view.findViewById(R.id.home_left_vp);
+		home_left_vp = (DispatchViewPager) view.findViewById(R.id.home_left_vp);
 		indicator = (TabPageIndicator) view.findViewById(R.id.indicator);
 		home_left_vp.setAdapter(new HomeLeftVpAdapter());
 		indicator.setViewPager(home_left_vp);
