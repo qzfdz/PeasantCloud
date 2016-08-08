@@ -82,14 +82,15 @@ public class WorkPlanActivity extends Activity implements OnItemClickListener, O
         builder.setPositiveButton(R.string.postive_button, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                
+            		
+        		done_listview.setAdapter(new WorkplanDoneLvAdapter(WorkPlanActivity.this,3));
+        		todo_listview.setAdapter(new WorkplanTodoLvAdapter(WorkPlanActivity.this,0));
             }
         });
         builder.setNegativeButton(R.string.negative_button, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-//        		done_listview.setAdapter(new WorkplanDoneLvAdapter(this,3));
-//        		todo_listview.setAdapter(new WorkplanTodoLvAdapter(this,0));
+
                 }
         });
 
