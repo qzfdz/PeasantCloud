@@ -19,7 +19,7 @@ public class GroupListtItemClickListenerAdpter implements OnItemClickListener
 	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 		// TODO Auto-generated method stub
 		 if (RongIM.getInstance() != null) {
-	            RongIM.getInstance().startGroupChat(ctx, "123123", "花生虫病害交流群");
+	            RongIM.getInstance().startGroupChat(ctx, "1", "花生虫病害交流群");
 	        }
 	}
 

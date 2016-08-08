@@ -19,7 +19,7 @@ public class FriendFragmentItemClickListenerAdpter implements OnItemClickListene
 	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 		// TODO Auto-generated method stub
 		 if (RongIM.getInstance() != null) {
-	            RongIM.getInstance().startPrivateChat(ctx,"456","农民老李");
+	            RongIM.getInstance().startPrivateChat(ctx,"1","轩轩");
 	        }
 	}
 

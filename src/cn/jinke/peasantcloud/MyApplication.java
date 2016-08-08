@@ -29,7 +29,7 @@ public class MyApplication extends Application{
              */
             RongIM.init(this);
             
-            String Token="ggDB8l1zBieXyQBfBnj7wup9/R0sAgu+L/rRSQlF5oyjQenNdU8RuUyfSGBvC24vt/qytZC+SjBZJx5/ErVvsw==";
+            String Token="c8puWxMi7dgn0nBjGuzZcs+jNUQ2Y6oq7L3J+tNH8hIFh00dHAsKvZnqPzy0Yem5bLyudbK7d2e/mwy7MGOmRg==";
 //          String Token="qW3nbCCBOLm9UYKiEZieV0AyjF3YK/g/g0Tuv9xBL7v64qEj9tXpMs+RHrKQK4kWZUMy+BDGgFLdwObcF5b7dA==";
           RongIM.connect(Token, new RongIMClient.ConnectCallback(){
               @Override
@@ -73,9 +73,9 @@ public class MyApplication extends Application{
 				private UserInfo findUserById(String userId) {
 					// TODO Auto-generated method stub
 					if(userId.equals("123")){
-						return new UserInfo(userId, "专家", Uri.parse("https://www.baidu.com/img/bd_logo1.png"));
+						return new UserInfo(userId, "专家", Uri.parse("http://pic10.nipic.com/20101103/5063545_000227976000_2.jpg"));
 					}else{
-						return new UserInfo(userId, "农民老李", Uri.parse("http://b.hiphotos.baidu.com/image/pic/item/7a899e510fb30f244bb50504ca95d143ad4b038d.jpg"));
+						return new UserInfo(userId, "农民老李", Uri.parse("http://img1.3lian.com/2015/w7/98/d/22.jpg"));
 					}
 					
 				}
