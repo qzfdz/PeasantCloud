@@ -2,23 +2,15 @@ package cn.jinke.peasantcloud.fragment;
 
 import cn.jinke.peasantcloud.R;
 import cn.jinke.peasantcloud.activity.WorkPlanActivity;
-
-import java.util.HashMap;
-
 import android.content.Intent;
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 /**
  * 侧边栏fragment
@@ -26,7 +18,8 @@ import android.widget.Toast;
  * @author QZ
  * 
  */
-public class LeftMenuFragment extends BaseFragment implements OnItemClickListener{
+public class LeftMenuFragment extends BaseFragment implements
+		OnItemClickListener {
 
 	private static final String[] LEFT_MENU_TEXT = new String[] { "农情提醒",
 			"扫一扫", "消息中心", "待办事项", "系统设置" };
@@ -35,7 +28,7 @@ public class LeftMenuFragment extends BaseFragment implements OnItemClickListene
 			R.drawable.home_left_menu_list3, R.drawable.home_left_menu_list4,
 			R.drawable.home_left_menu_list5 };
 	private View view;
-	
+
 	private ListView home_left_menu_lv;
 
 	@Override
@@ -49,14 +42,15 @@ public class LeftMenuFragment extends BaseFragment implements OnItemClickListene
 		home_left_menu_lv = (ListView) view
 				.findViewById(R.id.home_left_menu_lv);
 		home_left_menu_lv.setAdapter(new MenuAdapter());
-		
+
 		initListener();
 	}
 
 	private void initListener() {
 		home_left_menu_lv.setOnItemClickListener(this);
-	
+
 	}
+
 	class MenuAdapter extends BaseAdapter {
 
 		@Override
@@ -93,27 +87,27 @@ public class LeftMenuFragment extends BaseFragment implements OnItemClickListene
 	}
 
 	@Override
-	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-		
-		switch(position)
-		{
-			//农情提醒
-			case 0:
-				break;
-			//扫一扫
-			case 1:
-				break;
-			//消息通知
-			case 2:   
-				break;
-			//我的工作
-			case 3:
-				Intent intent = new Intent(getActivity(),WorkPlanActivity.class);
-				startActivity(intent);
-				break;
-			//系统设置
-			case 4:
-				break;
+	public void onItemClick(AdapterView<?> parent, View view, int position,
+			long id) {
+
+		switch (position) {
+		// 农情提醒
+		case 0:
+			break;
+		// 扫一扫
+		case 1:
+			break;
+		// 消息通知
+		case 2:
+			break;
+		// 我的工作
+		case 3:
+			Intent intent = new Intent(mActivity, WorkPlanActivity.class);
+			startActivity(intent);
+			break;
+		// 系统设置
+		case 4:
+			break;
 		}
 	}
 
