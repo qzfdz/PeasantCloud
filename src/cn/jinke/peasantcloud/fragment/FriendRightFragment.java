@@ -1,5 +1,6 @@
 package cn.jinke.peasantcloud.fragment;
 
+import io.rong.imkit.RongIM;
 import cn.jinke.peasantcloud.R;
 import cn.jinke.peasantcloud.activity.AddFarmerFriendActivity;
 import cn.jinke.peasantcloud.activity.FarmerFriendCircleActivity;
@@ -14,6 +15,8 @@ import android.view.TextureView;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.ExpandableListView;
+import android.widget.ExpandableListView.OnChildClickListener;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -26,7 +29,7 @@ public class FriendRightFragment extends BaseFragment implements
 		OnClickListener {
 
 	public static FriendRightFragment instance = null;
-	private ListView lv_in_fragment_friend;
+	private ExpandableListView lv_in_fragment_friend;
 	private View rl_farmer_friend_circle;
 	private View view;
 
@@ -46,7 +49,7 @@ public class FriendRightFragment extends BaseFragment implements
 
 	@Override
 	public void initData() {
-		lv_in_fragment_friend = (ListView) view
+		lv_in_fragment_friend = (ExpandableListView) view
 				.findViewById(R.id.lv_in_fragment_friend_right);
 		View header = View.inflate(getActivity(),
 				R.layout.header_of_fragment_friend, null);
@@ -55,14 +58,16 @@ public class FriendRightFragment extends BaseFragment implements
 
 		lv_in_fragment_friend.addHeaderView(header);
 		lv_in_fragment_friend.setAdapter(new FriendListViewAdapter(mActivity));
+		
 		initListener();
 	}
 
 	private void initListener() {
 		rl_farmer_friend_circle.setOnClickListener(this);
-		lv_in_fragment_friend
-				.setOnItemClickListener(new FriendFragmentItemClickListenerAdpter(
-						mActivity));
+		lv_in_fragment_friend.setOnChildClickListener(new MyChildClickListener());
+//		lv_in_fragment_friend
+//				.setOnItemClickListener(new FriendFragmentItemClickListenerAdpter(
+//						mActivity));
 
 	}
 
@@ -78,6 +83,17 @@ public class FriendRightFragment extends BaseFragment implements
 			break;
 
 		}
+	}
+	public class MyChildClickListener implements OnChildClickListener{
+
+		@Override
+		public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
+			 if (RongIM.getInstance() != null) {
+		            RongIM.getInstance().startPrivateChat(mActivity,"1","轩轩");
+		        }
+			return true;
+		}
+		
 	}
 
 }
