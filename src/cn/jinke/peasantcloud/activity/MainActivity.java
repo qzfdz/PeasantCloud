@@ -13,6 +13,7 @@ import cn.jinke.peasantcloud.fragment.FriendFragment;
 import cn.jinke.peasantcloud.fragment.HomeFragment;
 import cn.jinke.peasantcloud.fragment.LectureFragment;
 import cn.jinke.peasantcloud.fragment.LeftMenuFragment;
+import cn.jinke.peasantcloud.utils.DensityUtils;
 import cn.jinke.peasantcloud.utils.ImmersedStatusbarUtils;
 import cn.jinke.peasantcloud.view.TabIndicatorView;
 import android.os.Bundle;
@@ -49,7 +50,7 @@ public class MainActivity extends SlidingFragmentActivity {
 		slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
 		
 		//slidingMenu.setMode(SlidingMenu.LEFT);
-		slidingMenu.setBehindOffset(300);// 设置预留宽度
+		slidingMenu.setBehindOffset(DensityUtils.dp2Px(this, 100));// 设置预留宽度
 
 		initFragment();
 	}
