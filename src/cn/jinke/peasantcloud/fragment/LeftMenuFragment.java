@@ -29,7 +29,7 @@ import android.widget.Toast;
 public class LeftMenuFragment extends BaseFragment implements OnItemClickListener{
 
 	private static final String[] LEFT_MENU_TEXT = new String[] { "农情提醒",
-			"扫一扫", "消息通知", "我的工作", "系统设置" };
+			"扫一扫", "消息中心", "待办事项", "系统设置" };
 	private static final int[] LEFT_MENU_IMG = new int[] {
 			R.drawable.home_left_menu_list1, R.drawable.home_left_menu_list2,
 			R.drawable.home_left_menu_list3, R.drawable.home_left_menu_list4,

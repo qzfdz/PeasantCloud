@@ -48,7 +48,7 @@ public class LectureGridViewAdapter extends BaseAdapter{
 	public View getView(int position, View convertView, ViewGroup parent) {		
 		if (convertView == null) {
 			convertView = LayoutInflater.from(context).inflate(
-					R.layout.lecture_knowledge_gv_list, parent, false);
+					R.layout.lecture_knowledge_gv_item, parent, false);
 		}
 		ImageView img_name = BaseViewHolder.get(convertView, R.id.lecture_gv_img);
 		TextView tv_name = BaseViewHolder.get(convertView, R.id.lecture_gv_tv);

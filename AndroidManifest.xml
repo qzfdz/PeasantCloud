@@ -224,7 +224,7 @@
             android:name="cn.jinke.peasantcloud.activity.SplashIndexActivity"
             android:theme="@style/Theme.PageIndicatorDefaults">
         </activity>
-
+ 		<activity
             android:name="cn.jinke.peasantcloud.activity.MapRouteActivity"
             android:label="@string/title_activity_map_route_activity"
             android:theme="@android:style/Theme.Light.NoTitleBar" />

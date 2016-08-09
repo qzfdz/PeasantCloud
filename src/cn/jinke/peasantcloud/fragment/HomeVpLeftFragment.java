@@ -21,8 +21,8 @@ public class HomeVpLeftFragment extends BaseFragment {
 	private View view;
 	private DispatchViewPager home_left_vp;
 	private TabPageIndicator indicator;
-	private static final String[] category = new String[] { "农业科技", "应时农业",
-			"农事百科", "质量监督", "农业大全", "农事百科" };
+	private static final String[] category = new String[] { "应时农业", "农业科技",
+			"品牌农资", "农业政策", "市场行情", "供求信息","质量监督" };
 
 	@Override
 	public View initView() {
