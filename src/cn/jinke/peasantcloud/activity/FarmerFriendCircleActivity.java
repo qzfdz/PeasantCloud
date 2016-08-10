@@ -35,7 +35,7 @@ public class FarmerFriendCircleActivity extends Activity implements OnClickListe
 		View tail=View.inflate(FarmerFriendCircleActivity.this, R.layout.tail_clickinto_friendcircle, null);
 		back_btn_friendcircle.setOnClickListener(this);
 		lv_grouplist.addHeaderView(Header);
-		lv_grouplist.addFooterView(tail);
+//		lv_grouplist.addFooterView(tail);
 		lv_grouplist.setAdapter(new GroupListViewAdapter(FarmerFriendCircleActivity.this));
 		lv_grouplist.setOnItemClickListener(new GroupListtItemClickListenerAdpter(FarmerFriendCircleActivity.this));
 	}

@@ -1,33 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+     android:background="#f5f4f9"
     android:orientation="vertical" >
     
-<!--这里是农友圈的群推荐群  -->
-	<TextView 
-	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	    android:layout_marginTop="30dp"
-	    android:layout_marginLeft="10dp"
-	    android:text="推荐群组"/>
+    	
     	 	<RelativeLayout 
    	    android:layout_width="match_parent"
    	    android:layout_height="60dp"
    	    android:background="#fff"
    	     android:id="@+id/ll_friend_chatlist"
-   	     android:layout_marginTop="5dp"
+   	     
    	     >
 	    
-	    <!--  <cn.jinke.peasantcloud.view.CircularImage 
-	        android:id="@+id/friend_list_headimg"
-	        android:layout_centerVertical="true"
-	        android:layout_marginLeft="20dp"
-	        android:layout_width="30dp"  
-	        android:layout_height="30dp"  
-	        android:src="@drawable/header"/> -->
-	         <io.rong.imkit.widget.AsyncImageView
+	 
+	       <io.rong.imkit.widget.AsyncImageView
             android:id="@+id/friend_list_headimg"
             android:layout_width="48dp"
             android:layout_height="48dp"
@@ -67,16 +56,19 @@
 	        />
 	     </LinearLayout>
 	    <Button  
+	        android:id="@+id/add_or_apply"
 	        android:background="@drawable/button_circle"
 	        android:layout_centerVertical="true"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	       	android:layout_marginRight="20dp"	
+	       	android:layout_marginRight="15dp"	
 	       	android:textColor="#FFF"
 	       	android:layout_alignParentRight="true"
 	       	android:text="申请加入"
-	       	android:padding="8dp"/>
+	       	android:padding="7dp"/>
 	    
    	    
    	</RelativeLayout>
+    
+
 </LinearLayout>

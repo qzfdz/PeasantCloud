@@ -10,7 +10,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
@@ -21,13 +23,14 @@ import cn.jinke.peasantcloud.adapter.ConsultLvAdapter;
 import cn.jinke.peasantcloud.adapter.WorkplanDoneLvAdapter;
 import cn.jinke.peasantcloud.adapter.WorkplanTodoLvAdapter;
 
-public class WorkPlanActivity extends Activity implements OnItemClickListener, OnItemLongClickListener{
+public class WorkPlanActivity extends Activity implements OnItemClickListener, OnItemLongClickListener,OnClickListener{
 	
 	private View view;
 	ListView todo_listview,done_listview;
 	
 	//声明一个AlertDialog构造器
     private AlertDialog.Builder builder;
+	private ImageView back;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +39,8 @@ public class WorkPlanActivity extends Activity implements OnItemClickListener, O
 		setContentView(R.layout.activity_work_plan);
 		
 		todo_listview = (ListView) findViewById(R.id.workplan_todo);
-		done_listview = (ListView) findViewById(R.id.workplan_done);		
+		done_listview = (ListView) findViewById(R.id.workplan_done);
+		back = (ImageView)findViewById(R.id.workplan_back);
 		
 		todo_listview.setAdapter(new WorkplanTodoLvAdapter(this,1));
 		done_listview.setAdapter(new WorkplanDoneLvAdapter(this,2));
@@ -47,6 +51,7 @@ public class WorkPlanActivity extends Activity implements OnItemClickListener, O
 	private void initListener() {
 		todo_listview.setOnItemClickListener(this);
 		todo_listview.setOnItemLongClickListener(this);
+		back.setOnClickListener(this);
 	
 	}
 	@Override
@@ -99,6 +104,18 @@ public class WorkPlanActivity extends Activity implements OnItemClickListener, O
         AlertDialog dialog=builder.create();
         dialog.show();
     }
+	@Override
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.workplan_back:
+			finish();
+			break;
+
+		default:
+			break;
+		}
+		
+	}
 	
 
 }
