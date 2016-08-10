@@ -47,6 +47,12 @@
 	            android:drawableLeft="@drawable/ask_top_ask"
 	            android:drawablePadding="5dp"/>
 	    </RelativeLayout>
+	    <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:background="#D3D3D3" />
 	    <RelativeLayout 
 	        android:layout_height="match_parent"
 	        android:layout_width="0dp"

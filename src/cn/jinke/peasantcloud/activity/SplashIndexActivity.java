@@ -55,12 +55,4 @@ public class SplashIndexActivity extends Activity {
         rl_splash_index.startAnimation(amset);
 		
 	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.splash_index, menu);
-		return true;
-	}
-
 }
