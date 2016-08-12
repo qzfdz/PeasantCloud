@@ -20,7 +20,7 @@
 	        android:layout_height="wrap_content"
 	        android:layout_width="wrap_content"
 	        android:layout_centerInParent="true"
-	        android:text="工作列表"
+	        android:text="待办事项"
 	        android:textSize="22sp"
 	        android:textColor="#fff"/>
 	   

@@ -32,7 +32,7 @@ public class LectureVpRightFragment extends BaseFragment {
 			R.drawable.agriculture4, R.drawable.agriculture5,
 			R.drawable.agriculture6, R.drawable.agriculture7,
 			R.drawable.agriculture8, R.drawable.agriculture1 };
-	private String[] img_text = { "直播预告", "正在直播", "往期精彩" };
+	private String[] img_text = { "正在直播", "直播预告", "往期精彩" };
 	private int[] num = new int[] { 0, 1, 2 };
 	private ListView lv_live;
 	private View view;

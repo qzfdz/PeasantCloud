@@ -15,13 +15,14 @@
 	        android:layout_centerVertical="true"
 	        android:layout_marginLeft="20dp"
 	        android:src="@drawable/home_left_user"/>
-	    <cn.jinke.peasantcloud.view.SegmentView
-	        android:id="@+id/home_seg"
-	        android:layout_width="160dp"  
-	        android:layout_height="wrap_content"  
-	        android:layout_gravity="center_horizontal"
-	        android:layout_centerInParent="true"/>
-	    <ImageView 
+	    <TextView 
+	        android:layout_height="wrap_content"
+	        android:layout_width="wrap_content"
+	        android:layout_centerInParent="true"
+	        android:text="农业资讯"
+	        android:textSize="22sp"
+	        android:textColor="#fff"/>  
+        <ImageView 
 	        android:id="@+id/home_img_search"
 	        android:layout_height="20dp"
 	        android:layout_width="20dp"
@@ -29,9 +30,13 @@
 	        android:layout_alignParentRight="true"
 	        android:layout_marginRight="20dp"
 	        android:src="@drawable/home_right_search"/>
-	    
 	</RelativeLayout>
-	<cn.jinke.peasantcloud.view.NoScrollViewPager 
+	<com.viewpagerindicator.TabPageIndicator
+        android:id="@+id/indicator"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        />
+	<android.support.v4.view.ViewPager
 	    android:id="@+id/home_vp"
     	android:layout_height="match_parent"
     	android:layout_width="match_parent"/>

@@ -27,8 +27,8 @@ public class SplashIndexActivity extends Activity {
 
 	private void startAnim() {
 		AnimationSet amset=new AnimationSet(false);
-        AlphaAnimation alpha = new AlphaAnimation(0, 1);
-        alpha.setDuration(3000);// 动画时间
+        AlphaAnimation alpha = new AlphaAnimation(1, 1);
+        alpha.setDuration(2000);// 动画时间
         alpha.setFillAfter(true);// 保持动画状态
         amset.addAnimation(alpha);
         amset.setAnimationListener(new Animation.AnimationListener() {
@@ -55,12 +55,4 @@ public class SplashIndexActivity extends Activity {
         rl_splash_index.startAnimation(amset);
 		
 	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.splash_index, menu);
-		return true;
-	}
-
 }

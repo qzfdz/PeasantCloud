@@ -15,9 +15,9 @@
 	        android:layout_centerVertical="true"
 	        android:layout_marginLeft="20dp"
 	        android:src="@drawable/home_left_user"/>
-	    <cn.jinke.peasantcloud.view.SegmentView2
+	    <cn.jinke.peasantcloud.view.SegmentView
 	        android:id="@+id/lecture_seg"
-	        android:layout_width="240dp"  
+	        android:layout_width="160dp"  
 	        android:layout_height="wrap_content"  
 	        android:layout_gravity="center_horizontal"
 	        android:layout_centerInParent="true"/>

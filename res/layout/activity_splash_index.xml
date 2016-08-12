@@ -2,22 +2,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-   	
+   	android:background="#1C1F48"
    	android:id="@+id/rl_splash_index"
     tools:context=".SplashIndexActivity" >
 
 <ImageView 
-    android:background="#1C1F48"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:scaleType="fitXY"
-    android:src="@drawable/lanuch_bg_ware"/>
-
-<ImageView 
-     android:background="#1C1F48"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:layout_centerHorizontal="true"
-    android:layout_marginTop="100dp"
-    android:layout_width="100dp"
-    android:layout_height="100dp"
-    android:src="@drawable/logo_9"/>"
+    android:layout_marginTop="200dp"
+    android:src="@drawable/group11"/>
+
 </RelativeLayout>

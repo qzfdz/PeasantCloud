@@ -38,8 +38,8 @@ public class SegmentView extends LinearLayout {
         textView1.setLayoutParams(new LayoutParams(0, dp2Px(getContext(),32), 1));  
         textView2.setLayoutParams(new LayoutParams(0, dp2Px(getContext(),32), 1));  
         
-        textView1.setText("农业资讯");  
-        textView2.setText("专家栏目");  
+        textView1.setText("专题");  
+        textView2.setText("讲座");  
         XmlPullParser xrp = getResources().getXml(R.drawable.seg_text_color_selector);    
         try {    
             ColorStateList csl = ColorStateList.createFromXml(getResources(), xrp);    

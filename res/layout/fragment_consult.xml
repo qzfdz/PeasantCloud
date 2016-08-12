@@ -14,13 +14,12 @@
 	        android:layout_centerVertical="true"
 	        android:layout_marginLeft="20dp"
 	        android:src="@drawable/home_left_user"/>
-	    <TextView 
-	        android:layout_height="wrap_content"
-	        android:layout_width="wrap_content"
-	        android:layout_centerInParent="true"
-	        android:text="农技咨询"
-	        android:textSize="22sp"
-	        android:textColor="#fff"/>  
+	    <cn.jinke.peasantcloud.view.SegmentView2
+	        android:id="@+id/consult_seg"
+	        android:layout_width="240dp"  
+	        android:layout_height="wrap_content"  
+	        android:layout_gravity="center_horizontal"
+	        android:layout_centerInParent="true"/> 
         <ImageView 
 	        android:id="@+id/consult_img_search"
 	        android:layout_height="20dp"
@@ -30,7 +29,13 @@
 	        android:layout_marginRight="20dp"
 	        android:src="@drawable/home_right_search"/>
 	</RelativeLayout>
-	<LinearLayout 
+	<cn.jinke.peasantcloud.view.NoScrollViewPager 
+	    android:id="@+id/consult_vp"
+    	android:layout_height="match_parent"
+    	android:layout_width="match_parent"/>
+	
+	
+	<!-- <LinearLayout 
 	    android:layout_width="match_parent"
 	    android:layout_height="40dp"
 	    android:orientation="horizontal">
@@ -47,6 +52,12 @@
 	            android:drawableLeft="@drawable/ask_top_ask"
 	            android:drawablePadding="5dp"/>
 	    </RelativeLayout>
+	    <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:background="#D3D3D3" />
 	    <RelativeLayout 
 	        android:layout_height="match_parent"
 	        android:layout_width="0dp"
@@ -66,5 +77,5 @@
 	    android:layout_width="match_parent"
 	    android:layout_height="match_parent"
 	    android:divider="@android:color/transparent"
-	    android:listSelector="@android:color/transparent"/>
+	    android:listSelector="@android:color/transparent"/> -->
 </LinearLayout>
