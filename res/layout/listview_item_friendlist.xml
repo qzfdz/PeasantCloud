@@ -4,15 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-     <!-- <io.rong.imkit.widget.AsyncImageView
-      android:id="@+id/rc_img"
-      android:layout_width="30dp"
-      android:layout_height="30dp"
-      android:layout_gravity="center"
-      android:layout_marginLeft="20dp"
-      app:RCCornerRadius="3dp"
-      app:RCDefDrawable="@drawable/header"
-      app:RCShape="square" /> -->
+    
     	<RelativeLayout 
    	    android:layout_width="match_parent"
    	    android:layout_height="60dp"
@@ -20,13 +12,7 @@
    	     android:id="@+id/ll_friend_chatlist"
    	     >
 	    
-	    <!--  <cn.jinke.peasantcloud.view.CircularImage 
-	        android:id="@+id/friend_list_headimg"
-	        android:layout_centerVertical="true"
-	        android:layout_marginLeft="20dp"
-	        android:layout_width="30dp"  
-	        android:layout_height="30dp"  
-	        android:src="@drawable/header"/> -->
+	
 	          <io.rong.imkit.widget.AsyncImageView
             android:id="@+id/friend_list_headimg"
             android:layout_width="48dp"
@@ -38,13 +24,27 @@
             app:RCDefDrawable="@drawable/header"
             app:RCShape="square" />
 	 
-	     
+	   <!--   <com.makeramen.roundedimageview.RoundedImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/imageView1"
+         android:layout_width="48dp"
+            android:layout_height="48dp"
+             android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+        android:src="@drawable/header"
+        android:scaleType="centerCrop"
+        app:riv_oval="false"
+        app:riv_corner_radius="3dip"
+        app:riv_mutate_background="true"
+        app:riv_tile_mode="repeat"
+         /> -->
 	    
 	         <TextView 
 	          android:layout_centerVertical="true"
 	         android:layout_toRightOf="@id/friend_list_headimg"
 	         android:layout_marginLeft="20dp"
-	         android:id="@+id/name"
+	         android:id="@+id/friend_list_name"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content" 
 	        android:text="李志"
@@ -53,15 +53,7 @@
 	        android:textColor="#000"
 	        />
 	         
-	   <!--  <TextView 
-	        android:layout_centerVertical="true"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	       	android:layout_marginRight="30dp"
-	       	android:layout_alignParentRight="true"
-	       	android:text="20:10"
-	       />
-	     -->
+	 
    	    
    	</RelativeLayout>
 

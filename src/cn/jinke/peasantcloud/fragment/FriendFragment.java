@@ -4,8 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+
+import io.rong.imkit.RongContext;
 import io.rong.imkit.fragment.ConversationListFragment;
+import io.rong.imkit.model.UIConversation;
+import io.rong.imkit.widget.adapter.ConversationListAdapter;
 import io.rong.imlib.model.Conversation;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v4.app.Fragment;
@@ -48,8 +53,8 @@ public class FriendFragment extends BaseFragment implements OnClickListener,
 	public void initData() {
 
 		fralist = new ArrayList<Fragment>();
-		mConversationListFra = initConversationList();
-		fralist.add(mConversationListFra);
+//		mConversationListFra = initConversationList();
+		fralist.add(FriendLeftFragment.getInstance());
 		fralist.add(FriendRightFragment.getInstance());
 		add_farmer_friend = (ImageView) view
 				.findViewById(R.id.add_farmer_friend);
@@ -106,7 +111,14 @@ public class FriendFragment extends BaseFragment implements OnClickListener,
 
 	private Fragment initConversationList() {
 		if (mConversationListFra == null) {
-			ConversationListFragment fragment = new ConversationListFragment();
+			
+//			 View view = View.inflate(mActivity, R.layout.conversationlist, null);
+
+//		    ConversationListFragment fragment = (ConversationListFragment) getChildFragmentManager().findFragmentById(R.id.conversationlist_myself);
+//			ConversationListFragment fragment = new ConversationListFragment();
+			
+			ConversationListFragment listFragment = ConversationListFragment.getInstance();
+			listFragment.setAdapter(new ConversationListAdapterEx(RongContext.getInstance()));
 			Uri uri = Uri
 					.parse("rong://"
 							+ getActivity().getApplicationInfo().packageName)
@@ -125,8 +137,8 @@ public class FriendFragment extends BaseFragment implements OnClickListener,
 							Conversation.ConversationType.SYSTEM.getName(),
 							"false")// 设置系统会话非聚合显示
 					.build();
-			fragment.setUri(uri);
-			return fragment;
+			listFragment.setUri(uri);
+			return listFragment;
 		} else {
 			return mConversationListFra;
 		}
@@ -177,5 +189,22 @@ public class FriendFragment extends BaseFragment implements OnClickListener,
 		super.onResume();
 		friend_seg.setSelected(page);
 
+	}
+	public class ConversationListAdapterEx extends ConversationListAdapter {
+	    public ConversationListAdapterEx(Context context) {
+	        super(context);
+	    }
+
+	    @Override
+	    protected View newView(Context context, int position, ViewGroup group) {
+	        return super.newView(context, position, group);
+	    }
+
+	    @Override
+	    protected void bindView(View v, int position, UIConversation data) {
+	    if(data.getConversationType().equals(Conversation.ConversationType.DISCUSSION))
+	        data.setUnreadType(UIConversation.UnreadRemindType.REMIND_ONLY);
+	        super.bindView(v, position, data);
+	    }
 	}
 }

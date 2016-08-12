@@ -13,7 +13,7 @@
    	     >
 	    
 	      <io.rong.imkit.widget.AsyncImageView
-            android:id="@+id/friend_list_headimg"
+            android:id="@+id/group_list_headimg"
             android:layout_width="48dp"
             android:layout_height="48dp"
              android:layout_marginLeft="20dp"
@@ -24,10 +24,10 @@
             app:RCShape="square" />
 	     
 	       <TextView 
+	           android:id="@+id/group_list_name"
 	             android:layout_centerVertical="true"
-	         android:layout_toRightOf="@id/friend_list_headimg"
+	         android:layout_toRightOf="@id/group_list_headimg"
 	         android:layout_marginLeft="20dp"
-	         android:id="@+id/name"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content" 
 	        android:text="花生虫病害交流群"
@@ -35,16 +35,7 @@
 	        android:layout_marginTop="10dp"
 	        android:textColor="#000"
 	        />
-	         
-	   <!--  <TextView 
-	        android:layout_centerVertical="true"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	       	android:layout_marginRight="30dp"
-	       	android:layout_alignParentRight="true"
-	       	android:text="20:10"
-	       />
-	     -->
+	 
    	    
 	    
    	    

@@ -14,18 +14,23 @@ import android.view.ViewGroup;
 public abstract class BaseFragment extends Fragment{
 
 	public Activity mActivity;
+	public ViewGroup mcontainer;
+	LayoutInflater minflater;
 	
 	//fragment创建
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		mActivity = getActivity();
+		
 	}
 	
 	//处理fragment的布局
 	@Override
 	public View onCreateView(LayoutInflater inflater,ViewGroup container,
-			Bundle savedInstanceState) {		
+			Bundle savedInstanceState) {	
+		mcontainer=container;
+		minflater=inflater;
 		return initView();
 	}
 

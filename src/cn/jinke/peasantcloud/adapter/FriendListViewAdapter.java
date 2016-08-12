@@ -1,9 +1,13 @@
 package cn.jinke.peasantcloud.adapter;
 
+import io.rong.imkit.widget.AsyncImageView;
 import cn.jinke.peasantcloud.R;
 import cn.jinke.peasantcloud.utils.BaseViewHolder;
+import android.content.ContentResolver;
 import android.content.Context;
+import android.content.res.Resources;
 import android.database.DataSetObserver;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.TextureView;
 import android.view.View;
@@ -15,6 +19,10 @@ import android.widget.TextView;
 
 public class FriendListViewAdapter implements ExpandableListAdapter {
 
+	int[][] header_img={{R.drawable.header},{R.drawable.header,R.drawable.test2},
+			{R.drawable.test1,R.drawable.test2,R.drawable.test3}};
+	String[][] name={{"李志"},{"郭里","孙样"},
+			{"郭里","孙样","李志"}};
 	private Context ctx;
 	private String[] groups = new String[]{
             "专家", "农技员", "种植户"
@@ -46,14 +54,29 @@ public class FriendListViewAdapter implements ExpandableListAdapter {
 			convertView = LayoutInflater.from(ctx).inflate(
 					R.layout.listview_item_friendlist, parent, false);
 		}
-//		View view = View.inflate(ctx, R.layout.listview_item_friendlist, null);		
+//		View view = View.inflate(ctx, R.layout.listview_item_friendlist, null);	
+//		AsyncImageView img=BaseViewHolder.get(convertView, R.id.friend_list_headimg);
+		TextView tView=BaseViewHolder.get(convertView, R.id.friend_list_name);
+		
+		tView.setText(name[groupPosition][childPosition]);
+		AsyncImageView img=(AsyncImageView) convertView.findViewById(R.id.friend_list_headimg);
+
+//		img.setImageResource(header_img[groupPosition][childPosition]);
+//		Resources r=ctx.getResources();
+		int id=header_img[groupPosition][childPosition];
+//		Uri uri=Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE+"://"+r.getResourcePackageName(id)
+//				+"/"+r.getResourceTypeName(id)+"/"+r.getResourceEntryName(id));
+//		
+//		img.setResource(uri);
+//		img.setImageResource(id);
+		img.setResource(Uri.parse("http://pic10.nipic.com/20101103/5063545_000227976000_2.jpg"));
 		return convertView;
 		
 	}
 	@Override
 	public int getChildrenCount(int arg0) {
 		// TODO Auto-generated method stub
-		return 5;
+		return name[arg0].length;
 	}
 	@Override
 	public long getCombinedChildId(long arg0, long arg1) {
@@ -92,6 +115,8 @@ public class FriendListViewAdapter implements ExpandableListAdapter {
 		ImageView img=BaseViewHolder.get(convertView, R.id.img_indicator);
 		
 		TextView tv_type= BaseViewHolder.get(convertView, R.id.tv_friendtype);
+		TextView tv_number=BaseViewHolder.get(convertView, R.id.tv_number_inthisgroup);
+		tv_number.setText(getChildrenCount(groupPosition)+"");
 		tv_type.setText(groups[groupPosition]);
 		 if (isExpanded)
 	            img.setImageResource(

@@ -1,25 +1,15 @@
 package cn.jinke.peasantcloud.fragment;
 
 import io.rong.imkit.RongIM;
-import cn.jinke.peasantcloud.R;
-import cn.jinke.peasantcloud.activity.AddFarmerFriendActivity;
-import cn.jinke.peasantcloud.activity.FarmerFriendCircleActivity;
-import cn.jinke.peasantcloud.adapter.FriendFragmentItemClickListenerAdpter;
-import cn.jinke.peasantcloud.adapter.FriendListViewAdapter;
 import android.content.Intent;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.TextureView;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup;
 import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnChildClickListener;
-import android.widget.ListView;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
+import cn.jinke.peasantcloud.R;
+import cn.jinke.peasantcloud.activity.FarmerFriendCircleActivity;
+import cn.jinke.peasantcloud.adapter.FriendListViewAdapter;
 /**
  * 农友圈右侧fragment
  * @author QZ

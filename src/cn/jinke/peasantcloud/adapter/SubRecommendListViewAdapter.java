@@ -1,5 +1,6 @@
 package cn.jinke.peasantcloud.adapter;
 
+import io.rong.imkit.widget.AsyncImageView;
 import cn.jinke.peasantcloud.R;
 import cn.jinke.peasantcloud.utils.BaseViewHolder;
 import cn.jinke.peasantcloud.view.MyListView;
@@ -25,7 +26,7 @@ public class SubRecommendListViewAdapter extends BaseAdapter{
 	@Override
 	public int getCount() {
 		// TODO Auto-generated method stub
-		return 5;
+		return 2;
 	}
 
 	@Override
@@ -53,6 +54,15 @@ public class SubRecommendListViewAdapter extends BaseAdapter{
 //		MyListView lv_sub_recommend=(MyListView)BaseViewHolder.get(convertView,R.id.lv_sub_recommend);
 //		lv_sub_recommend.setAdapter(new SubRecommendListViewAdapter(ctx));
 		Button btnButton=BaseViewHolder.get(convertView, R.id.add_or_apply);
+		AsyncImageView  recommend_list_headimg=BaseViewHolder.get(convertView, R.id.recommend_list_headimg);
+		TextView recommend_list_name=BaseViewHolder.get(convertView, R.id.recommend_list_name);
+		TextView recommend_list_intro=BaseViewHolder.get(convertView, R.id.recommend_list_intro);
+//		String introString=recommend_list_intro.getText();
+//		if(){
+//			
+//		}
+		
+		
 		if(which==1 || which==2){
 			btnButton.setText("添加好友");
 		}
