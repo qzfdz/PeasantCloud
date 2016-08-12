@@ -40,9 +40,9 @@ public class SegmentView2 extends LinearLayout {
         textView1.setLayoutParams(new LayoutParams(0, dp2Px(getContext(),32), 1));  
         textView2.setLayoutParams(new LayoutParams(0, dp2Px(getContext(),32), 1)); 
         textView3.setLayoutParams(new LayoutParams(0, dp2Px(getContext(),32), 1));
-        textView1.setText("视频");  
+        textView1.setText("专家");  
         textView2.setText("知识库");  
-        textView3.setText("直播"); 
+        textView3.setText("问答"); 
         XmlPullParser xrp = getResources().getXml(R.drawable.seg_text_color_selector);    
         try {    
             ColorStateList csl = ColorStateList.createFromXml(getResources(), xrp);    

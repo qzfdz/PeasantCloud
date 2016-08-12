@@ -1,21 +1,25 @@
 package cn.jinke.peasantcloud.fragment;
 
 import cn.jinke.peasantcloud.R;
+import cn.jinke.peasantcloud.activity.VideoContentActivity;
 import cn.jinke.peasantcloud.adapter.LectureGridViewAdapter;
 import cn.jinke.peasantcloud.utils.BaseViewHolder;
 import cn.jinke.peasantcloud.view.MyGridView;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 /**
- * 农技讲堂知识库fragment
+ * 农技咨询专家fragment
  * @author QZ
  *
  */
-public class LectureVpCenterFragment extends BaseFragment {
+public class ConsultVpLeftFragment extends BaseFragment {
 
 	private String[] img_text = { "作物", "家禽", "肥料" };
 	private int[] num = new int[] { 0, 1, 2 };
@@ -24,17 +28,17 @@ public class LectureVpCenterFragment extends BaseFragment {
 
 	@Override
 	public View initView() {
-		view = View.inflate(mActivity, R.layout.lecture_vp_knowledge, null);
+		view = View.inflate(mActivity, R.layout.consult_vp_zhuanjia, null);
 		return view;
 	}
 
 	@Override
 	public void initData() {
-		lv = (ListView) view.findViewById(R.id.lecture_knowledge_lv);
-		lv.setAdapter(new KnowledgeLvAdapter());
+		lv = (ListView) view.findViewById(R.id.lecture_video_lv);
+		lv.setAdapter(new VideoLvAdapter());
 	}
 
-	class KnowledgeLvAdapter extends BaseAdapter {
+	class VideoLvAdapter extends BaseAdapter {
 
 		@Override
 		public int getCount() {
@@ -60,6 +64,17 @@ public class LectureVpCenterFragment extends BaseFragment {
 			MyGridView gv = BaseViewHolder.get(convertView,
 					R.id.lecture_knowledge_gv);
 			gv.setAdapter(new LectureGridViewAdapter(mActivity, num[position]));
+			gv.setOnItemClickListener(new OnItemClickListener() {
+				@Override
+				public void onItemClick(AdapterView<?> parent, View view,
+						int position, long id) {
+
+					Intent intent = new Intent(mActivity,
+							VideoContentActivity.class);
+					startActivity(intent);
+
+				}
+			});
 			TextView tv_category = BaseViewHolder.get(convertView,
 					R.id.lecture_tv_category);
 			View view = BaseViewHolder.get(convertView, R.id.lecture_view);

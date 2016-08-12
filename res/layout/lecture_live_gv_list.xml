@@ -10,16 +10,14 @@
         android:layout_height="fill_parent"
         android:layout_centerInParent="true"
         android:background="@drawable/bg_gv"
-        android:paddingTop="35dp"
-        android:paddingBottom="35dp" >
+        android:paddingTop="30dp"
+        android:paddingBottom="30dp" >
 
         <ImageView
             android:id="@+id/live_gv_img"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_centerHorizontal="true"
-            
-            />
+            android:layout_centerHorizontal="true"/>
 
         
         <TextView

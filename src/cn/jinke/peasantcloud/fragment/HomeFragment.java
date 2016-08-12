@@ -5,13 +5,19 @@ import java.util.List;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ListView;
 import cn.jinke.peasantcloud.R;
+import cn.jinke.peasantcloud.view.HomeTabViewPager;
 import cn.jinke.peasantcloud.view.NoScrollViewPager;
 import cn.jinke.peasantcloud.view.SegmentView;
 import cn.jinke.peasantcloud.view.SegmentView.onSegmentViewClickListener;
@@ -19,28 +25,32 @@ import cn.jinke.peasantcloud.view.SegmentView.onSegmentViewClickListener;
 import cn.jinke.peasantcloud.activity.HomeSearchActivity;
 import cn.jinke.peasantcloud.activity.MainActivity;
 import cn.jinke.peasantcloud.adapter.FragmentAdapter;
+import cn.jinke.peasantcloud.adapter.HomeTabLvAdapter;
+import cn.jinke.peasantcloud.adapter.HomeTabVpAdapter;
+
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+import com.viewpagerindicator.CirclePageIndicator;
+import com.viewpagerindicator.TabPageIndicator;
 
 /**
  * 主页面fragment,包含农业资讯和专家栏目两个fragment
  */
 
-public class HomeFragment extends BaseFragment implements
-		onSegmentViewClickListener, OnClickListener {
+public class HomeFragment extends BaseFragment implements OnClickListener,
+		OnPageChangeListener {
 
-	private NoScrollViewPager viewPager;
-	private SegmentView segmentView;
+	private ViewPager viewPager;
 	private SlidingMenu slidingMenu;
 	private ImageView home_left_user, home_img_search;
-	private List<Fragment> fraglist = new ArrayList<Fragment>();
-	private FragmentAdapter mFragmentAdapter;
-
-	private HomeVpLeftFragment leftFragment;
-	private HomeVpRightFragment rightFragment;
-
-	private int page = 0;
+	private HomeTabViewPager tab_vp;
 	private View view;
 
+	private TabPageIndicator indicator;
+	private static final String[] category = new String[] { "应时农业", "农业科技",
+			"品牌农资", "农业政策", "市场行情", "供求信息","质量监督" };
+	private Handler mHandler;
+	private HomeVpFragment hVpFragment;
+	
 	@Override
 	public View initView() {
 		view = View.inflate(mActivity, R.layout.fragment_home, null);
@@ -49,57 +59,21 @@ public class HomeFragment extends BaseFragment implements
 
 	@Override
 	public void initData() {
-		viewPager = (NoScrollViewPager) view.findViewById(R.id.home_vp);
-		segmentView = (SegmentView) view.findViewById(R.id.home_seg);
+		viewPager = (ViewPager) view.findViewById(R.id.home_vp);
+		indicator = (TabPageIndicator) view.findViewById(R.id.indicator);
 		home_left_user = (ImageView) view.findViewById(R.id.home_img_user);
 		home_img_search = (ImageView) view.findViewById(R.id.home_img_search);
-		leftFragment = new HomeVpLeftFragment();
-		rightFragment = new HomeVpRightFragment();
-		fraglist.add(leftFragment);
-		fraglist.add(rightFragment);
-		mFragmentAdapter = new FragmentAdapter(getChildFragmentManager(),
-				fraglist);
-
-		viewPager.setAdapter(mFragmentAdapter);
-		viewPager.setCurrentItem(0);
+		viewPager.setAdapter(new HomeVpAdapter());
+		indicator.setViewPager(viewPager);
 		MainActivity main = (MainActivity) mActivity;
 		slidingMenu = main.getSlidingMenu();
 		initListener();
 	}
 
-	@Override
-	public void onDestroyView() {
-		super.onDestroyView();
-		page = viewPager.getCurrentItem();
-	}
-
-	@Override
-	public void onStop() {
-		super.onStop();
-		page = viewPager.getCurrentItem();
-	}
-
-	@Override
-	public void onResume() {
-		super.onResume();
-		if (segmentView != null) {
-			segmentView.setSelected(page);
-		}
-	}
-
 	private void initListener() {
-		segmentView.setOnSegmentViewClickListener(this);
+		indicator.setOnPageChangeListener(this);
 		home_left_user.setOnClickListener(this);
-		home_img_search.setOnClickListener(this);
-	}
-
-	@Override
-	public void onSegmentViewClick(View v, int position) {
-		if (position == 0) {
-			viewPager.setCurrentItem(0, false);
-		} else {
-			viewPager.setCurrentItem(1, false);
-		}
+		home_img_search.setOnClickListener(this);		
 	}
 
 	@Override
@@ -116,5 +90,58 @@ public class HomeFragment extends BaseFragment implements
 			break;
 		}
 	}
+	
+	class HomeVpAdapter extends PagerAdapter {
+		
+		@Override
+		public CharSequence getPageTitle(int position) {
+			return category[position];
+		}
+
+		@Override
+		public int getCount() {
+			return category.length;
+		}
+
+		@Override
+		public boolean isViewFromObject(View view, Object object) {
+			return view == object;
+		}
+
+		public Object instantiateItem(ViewGroup container, int position) {
+			hVpFragment = new HomeVpFragment(mActivity);
+			container.addView(hVpFragment.mview);			
+			return hVpFragment.mview;
+		}
+
+		@Override
+		public void destroyItem(ViewGroup container, int position, Object object) {
+			container.removeView((View) object);
+		}
+	}
+
+	
+	@Override
+	public void onPageScrollStateChanged(int arg0) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onPageScrolled(int arg0, float arg1, int arg2) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onPageSelected(int arg0) {
+		if (arg0 == 0) {//只有在第一个页面, 侧边栏才允许出来
+			slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+		} else {
+			slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_NONE);
+		}
+	}
+	
+	
 
 }

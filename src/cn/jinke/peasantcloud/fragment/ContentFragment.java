@@ -20,11 +20,13 @@ public class ContentFragment extends BaseFragment implements
 	private static final String TAB_FRIEND = "friend"; // 农友圈
 	private static final String TAB_LECTURE = "lecture"; // 农技讲堂
 	private static final String TAB_CONSULT = "consult"; // 农技咨询
+	private static final String TAB_STORE = "store"; //农资商城
 
 	private TabIndicatorView IndicatorHome;
 	private TabIndicatorView IndicatorFriend;
 	private TabIndicatorView IndicatorLecture;
 	private TabIndicatorView IndicatorConsult;
+	private TabIndicatorView IndicatorStore;
 
 	private FragmentTabHost tabHost;
 	private View view;
@@ -48,7 +50,7 @@ public class ContentFragment extends BaseFragment implements
 		TabHost.TabSpec spec = tabHost.newTabSpec(TAB_HOME);
 		// 新建Indicator，并设置Indicator属性
 		IndicatorHome = new TabIndicatorView(mActivity);
-		IndicatorHome.setTabTitle("首页");
+		IndicatorHome.setTabTitle("农业资讯");
 		IndicatorHome.setTabIcon(R.drawable.tab_home_normal,
 				R.drawable.tab_home_focus);
 		spec.setIndicator(IndicatorHome);
@@ -65,7 +67,7 @@ public class ContentFragment extends BaseFragment implements
 
 		spec = tabHost.newTabSpec(TAB_LECTURE);
 		IndicatorLecture = new TabIndicatorView(mActivity);
-		IndicatorLecture.setTabTitle("农技讲堂");
+		IndicatorLecture.setTabTitle("专家栏目");
 		IndicatorLecture.setTabIcon(R.drawable.tab_lecture_normal,
 				R.drawable.tab_lecture_focus);
 		spec.setIndicator(IndicatorLecture);
@@ -78,6 +80,14 @@ public class ContentFragment extends BaseFragment implements
 				R.drawable.tab_consult_focus);
 		spec.setIndicator(IndicatorConsult);
 		tabHost.addTab(spec, ConsultFragment.class, null);
+		
+		spec = tabHost.newTabSpec(TAB_STORE);
+		IndicatorStore = new TabIndicatorView(mActivity);
+		IndicatorStore.setTabTitle("农资商城");
+		IndicatorStore.setTabIcon(R.drawable.tabbar_shop_normal,
+				R.drawable.tabbar_shop_on);
+		spec.setIndicator(IndicatorStore);
+		tabHost.addTab(spec, StoreFragment.class, null);
 
 		// 去掉Indicator之间的分割线
 		tabHost.getTabWidget().setDividerDrawable(android.R.color.white);
@@ -93,6 +103,7 @@ public class ContentFragment extends BaseFragment implements
 		IndicatorFriend.setTabSelected(false);
 		IndicatorLecture.setTabSelected(false);
 		IndicatorConsult.setTabSelected(false);
+		IndicatorStore.setTabSelected(false);
 
 		// 通过tag判断哪个标签被选中，设置选中状态为true，并切换对应的Fragment
 		if (TAB_HOME.equals(tag)) {
@@ -107,6 +118,9 @@ public class ContentFragment extends BaseFragment implements
 		} else if (TAB_CONSULT.equals(tag)) {
 			tabHost.setCurrentTabByTag(TAB_CONSULT);
 			IndicatorConsult.setTabSelected(true);
+		}else if (TAB_STORE.equals(tag)) {
+			tabHost.setCurrentTabByTag(TAB_STORE);
+			IndicatorStore.setTabSelected(true);
 		}
 	}
 

@@ -10,7 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import cn.jinke.peasantcloud.utils.BaseViewHolder;
 
-public class HomeListViewAdapter extends BaseAdapter {
+public class HomeTabLvAdapter extends BaseAdapter {
 
 	public static final String[] img_text = { "中央财政加大对新型职业农民培育工作支持力度",
 			"洪涝灾害动物疫病防控技术指南", "聚焦绿色高产高效 引领农业转型升级", "高淳区武家嘴科技园葡萄采摘引游人 农旅结合显成效",
@@ -30,7 +30,7 @@ public class HomeListViewAdapter extends BaseAdapter {
 			"2016-07-16", "2016-08-08" };
 	private Context context;
 
-	public HomeListViewAdapter(Context context) {
+	public HomeTabLvAdapter(Context context) {
 		this.context = context;
 	}
 
