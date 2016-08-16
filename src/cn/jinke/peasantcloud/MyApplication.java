@@ -74,10 +74,25 @@ public class MyApplication extends Application{
 
 				private UserInfo findUserById(String userId) {
 					// TODO Auto-generated method stub
-					if(userId.equals("123")){
-						return new UserInfo(userId, "专家", Uri.parse("http://pic10.nipic.com/20101103/5063545_000227976000_2.jpg"));
+					if(userId.equals("1")){
+						return new UserInfo(userId, "轩轩", Uri.parse("http://tse2.mm.bing.net/th?id=OIP.M7b7365ca26e3503d5764e6085e11c568o0&pid=15.1"));
+					}else if(userId.equals("2")){
+						return new UserInfo(userId, "小张专家", Uri.parse("http://pic27.nipic.com/20130321/12176292_164836158136_2.jpg"));
+						
+					}else if(userId.equals("3")){
+						return new UserInfo(userId, "大闸蟹养殖户", Uri.parse("http://tse3.mm.bing.net/th?id=OIP.Mcd88bedfd2a36d0d88f4bdfcdfe6993ao1&pid=15.1"));
+						
+					}else if(userId.equals("4")){
+						return new UserInfo(userId, "玉米种植员", Uri.parse("http://tse2.mm.bing.net/th?id=OIP.M14149da2603d22478e2d0fe96bc461dao0&pid=15.1"));
+						
+					}else if(userId.equals("100")){
+						return new UserInfo(userId, "互动投票", Uri.parse("http://tse1.mm.bing.net/th?id=OIP.M77df2c9c405db4d96ceaa921ec21494cH0&pid=15.1"));
+						
+					}else if(userId.equals("102")){
+						return new UserInfo(userId, "问卷调查", Uri.parse("http://tse4.mm.bing.net/th?id=OIP.M37663dc22359e50e401313af64518036o0&pid=15.1"));
+						
 					}else{
-						return new UserInfo(userId, "农民老李", Uri.parse("http://img1.3lian.com/2015/w7/98/d/22.jpg"));
+						return new UserInfo(userId, "轩轩", Uri.parse("http://tse2.mm.bing.net/th?id=OIP.M7b7365ca26e3503d5764e6085e11c568o0&pid=15.1"));
 					}
 					
 				}
