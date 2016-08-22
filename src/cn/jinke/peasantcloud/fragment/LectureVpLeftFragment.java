@@ -1,6 +1,8 @@
 package cn.jinke.peasantcloud.fragment;
 
 import cn.jinke.peasantcloud.R;
+import cn.jinke.peasantcloud.activity.ExpertActivity;
+import cn.jinke.peasantcloud.activity.ExpertInfoActivity;
 import cn.jinke.peasantcloud.activity.VideoContentActivity;
 import cn.jinke.peasantcloud.adapter.LectureGridViewAdapter;
 import cn.jinke.peasantcloud.utils.BaseViewHolder;
@@ -9,6 +11,7 @@ import cn.jinke.peasantcloud.view.MyGridView;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -106,12 +109,23 @@ public class LectureVpLeftFragment extends BaseFragment {
 					R.id.tv_lecture_date);
 			ImageView img = BaseViewHolder.get(convertView,
 					R.id.lecture_left_img);
-			
+
 			name.setText(names[position]);
 			content.setText(contents[position]);
 			common.setText(commons[position]);
 			date.setText(times[position]);
 			img.setImageResource(imgLv_ID[position]);
+			
+//			img.setOnClickListener(new OnClickListener() {
+//				
+//				@Override
+//				public void onClick(View arg0) {
+//					Intent intent = new Intent(LectureVpLeftFragment.this,
+//							ExpertInfoActivity.class);
+//					startActivity(intent);
+//					
+//				}
+//			});
 
 			header.setImageResource(header_imgs[position]);
 			return convertView;

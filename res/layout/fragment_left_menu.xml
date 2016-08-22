@@ -16,7 +16,7 @@
             android:layout_height="50dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="15dp"
-            android:src="@drawable/header" />
+            android:src="@drawable/header1" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -117,7 +117,7 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="40dp"
         android:divider="@android:color/transparent"
         android:listSelector="@android:color/transparent" />
 
@@ -154,7 +154,29 @@
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_marginRight="20dp"
-            android:background="@drawable/left_button_circle"/>
+            android:background="@drawable/left_btn_selector"/>
     </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/tv_logincounts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_logintime"
+        android:layout_below="@+id/tv_logintime"
+        android:layout_marginTop="3dp"
+
+        android:textColor="#fff"
+        android:text="本周登录次数：     25次" />
+
+    <TextView
+        android:id="@+id/tv_logintime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/rl"
+        android:textColor="#fff"
+        android:layout_marginLeft="20dp"
+        android:text="本周登录时长：     20.5小时" />
 
 </RelativeLayout>

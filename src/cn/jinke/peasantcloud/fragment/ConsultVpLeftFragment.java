@@ -1,6 +1,7 @@
 package cn.jinke.peasantcloud.fragment;
 
 import cn.jinke.peasantcloud.R;
+import cn.jinke.peasantcloud.activity.ExpertActivity;
 import cn.jinke.peasantcloud.activity.VideoContentActivity;
 import cn.jinke.peasantcloud.adapter.LectureGridViewAdapter;
 import cn.jinke.peasantcloud.utils.BaseViewHolder;
@@ -70,7 +71,7 @@ public class ConsultVpLeftFragment extends BaseFragment {
 						int position, long id) {
 
 					Intent intent = new Intent(mActivity,
-							VideoContentActivity.class);
+							ExpertActivity.class);
 					startActivity(intent);
 
 				}

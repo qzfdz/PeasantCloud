@@ -40,7 +40,7 @@ public class SplashIndexActivity extends Activity {
             @Override
             public void onAnimationEnd(Animation animation) {
 //                jump_to_nextpage();
-            	startActivity(new Intent(SplashIndexActivity.this,MainActivity.class));
+            	startActivity(new Intent(SplashIndexActivity.this,LoginActivity.class));
             	finish();
 
             }
