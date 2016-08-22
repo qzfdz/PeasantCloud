@@ -13,7 +13,7 @@
    	     >
 	    
 	
-	          <io.rong.imkit.widget.AsyncImageView
+	        <io.rong.imkit.widget.AsyncImageView
             android:id="@+id/friend_list_headimg"
             android:layout_width="48dp"
             android:layout_height="48dp"

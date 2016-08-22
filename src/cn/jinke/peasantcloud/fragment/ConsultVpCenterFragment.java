@@ -1,15 +1,19 @@
 package cn.jinke.peasantcloud.fragment;
 
 import cn.jinke.peasantcloud.R;
+import cn.jinke.peasantcloud.activity.VideoContentActivity;
 import cn.jinke.peasantcloud.adapter.LectureGridViewAdapter;
 import cn.jinke.peasantcloud.utils.BaseViewHolder;
 import cn.jinke.peasantcloud.view.MyGridView;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.AdapterView.OnItemClickListener;
 /**
  * 农技咨询知识库fragment
  * @author QZ
@@ -60,6 +64,17 @@ public class ConsultVpCenterFragment extends BaseFragment {
 			MyGridView gv = BaseViewHolder.get(convertView,
 					R.id.lecture_knowledge_gv);
 			gv.setAdapter(new LectureGridViewAdapter(mActivity, num[position]));
+			gv.setOnItemClickListener(new OnItemClickListener() {
+				@Override
+				public void onItemClick(AdapterView<?> parent, View view,
+						int position, long id) {
+
+					Intent intent = new Intent(mActivity,
+							VideoContentActivity.class);
+					startActivity(intent);
+
+				}
+			});
 			TextView tv_category = BaseViewHolder.get(convertView,
 					R.id.lecture_tv_category);
 			View view = BaseViewHolder.get(convertView, R.id.lecture_view);
