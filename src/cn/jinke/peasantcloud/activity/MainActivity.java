@@ -22,6 +22,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTabHost;
 import android.support.v4.app.FragmentTransaction;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,8 +49,8 @@ public class MainActivity extends SlidingFragmentActivity {
 		setBehindContentView(R.layout.home_menu);
 		SlidingMenu slidingMenu = getSlidingMenu();
 		slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
-		
-		//slidingMenu.setMode(SlidingMenu.LEFT);
+
+		// slidingMenu.setMode(SlidingMenu.LEFT);
 		slidingMenu.setBehindOffset(DensityUtils.dp2Px(this, 100));// 设置预留宽度
 
 		initFragment();
@@ -81,5 +82,25 @@ public class MainActivity extends SlidingFragmentActivity {
 				.findFragmentByTag(FRAGMENT_CONTENT);
 
 		return fragment;
+	}
+
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+		// 过滤按键动作
+		if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
+
+			moveTaskToBack(true);
+
+		}
+
+		return super.onKeyDown(keyCode, event);
+	}
+
+	@Override
+	public void onBackPressed() {
+
+		moveTaskToBack(true);
+		super.onBackPressed();
 	}
 }
