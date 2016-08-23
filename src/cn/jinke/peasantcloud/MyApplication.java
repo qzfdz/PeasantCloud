@@ -88,7 +88,7 @@ public class MyApplication extends Application{
 					}else if(userId.equals("100")){
 						return new UserInfo(userId, "互动投票", Uri.parse("http://tse1.mm.bing.net/th?id=OIP.M77df2c9c405db4d96ceaa921ec21494cH0&pid=15.1"));
 						
-					}else if(userId.equals("102")){
+					}else if(userId.equals("101")){
 						return new UserInfo(userId, "问卷调查", Uri.parse("http://tse4.mm.bing.net/th?id=OIP.M37663dc22359e50e401313af64518036o0&pid=15.1"));
 						
 					}else{
