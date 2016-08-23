@@ -11,13 +11,15 @@ import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.TextureView;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ExpandableListAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class FriendListViewAdapter implements ExpandableListAdapter {
+public class FriendListViewAdapter implements ExpandableListAdapter ,OnClickListener{
 
 	int[][] header_img={{R.drawable.header},{R.drawable.header,R.drawable.test2},
 			{R.drawable.test1,R.drawable.test2,R.drawable.test3}};
@@ -60,6 +62,7 @@ public class FriendListViewAdapter implements ExpandableListAdapter {
 		
 		tView.setText(name[groupPosition][childPosition]);
 		AsyncImageView img=(AsyncImageView) convertView.findViewById(R.id.friend_list_headimg);
+		img.setOnClickListener(this);
 
 //		img.setImageResource(header_img[groupPosition][childPosition]);
 //		Resources r=ctx.getResources();
@@ -160,6 +163,11 @@ public class FriendListViewAdapter implements ExpandableListAdapter {
 	public void unregisterDataSetObserver(DataSetObserver arg0) {
 		// TODO Auto-generated method stub
 		
+	}
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		Toast.makeText(ctx, "您点击了头像", Toast.LENGTH_SHORT).show();
 	}
 	
 
