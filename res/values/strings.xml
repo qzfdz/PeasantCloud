@@ -26,5 +26,7 @@
     <string name="title_activity_push_deal">PushDealActivity</string>
     <string name="title_activity_splash_index">SplashIndexActivity</string>
     <string name="title_activity_scanner">ScannerActivity</string>
+    <string name="title_activity_expert">ExpertActivity</string>
+    <string name="title_activity_expert_info">ExpertInfoActivity</string>
 
 </resources>

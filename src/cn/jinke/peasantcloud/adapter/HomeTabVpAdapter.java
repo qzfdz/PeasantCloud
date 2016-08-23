@@ -12,8 +12,8 @@ import android.widget.ListView;
 
 public class HomeTabVpAdapter extends PagerAdapter {
 
-	private static final int[] img_ID = { R.drawable.lunbo1, R.drawable.lunbo2,
-			R.drawable.lunbo3, R.drawable.lunbo4 };
+	private static final int[] img_ID = { R.drawable.jiangsu_zhuanti_1, R.drawable.jiangsu_zhuanti_2,
+			R.drawable.jiangsu_zhuanti_3, R.drawable.jiangsu_zhuanti_4 ,R.drawable.jiangsu_zhuanti_5,R.drawable.jiangsu_zhuanti_6};
 
 	private Context context;
 
@@ -23,7 +23,7 @@ public class HomeTabVpAdapter extends PagerAdapter {
 
 	@Override
 	public int getCount() {
-		return 4;
+		return 7;
 	}
 
 	@Override
